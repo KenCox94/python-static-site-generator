@@ -16,3 +16,7 @@ class Content(Mapping):
     def __init__(self, metadata, content):
         self.data = metadata
         self.data["content"] = content
+
+    @property
+    def body():
+        return self.data["content"]
