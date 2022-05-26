@@ -1,3 +1,4 @@
+import shutil
 from typing import List
 from pathlib import Path
 
@@ -19,3 +20,6 @@ class Parser:
         full_path = dest / path.with_suffix(ext).name
         with open(full_path, 'w') as file:
             file.write(content)
+
+    def copy(self, path: Path, source: Path, dest: Path):
+        shutil.copy2(path, dest / path.relative_to())
