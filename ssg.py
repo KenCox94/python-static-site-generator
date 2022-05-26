@@ -1,2 +1,2 @@
 import typer
-from site import Site
+from ssg.site import Site
