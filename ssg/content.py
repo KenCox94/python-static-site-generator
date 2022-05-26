@@ -23,5 +23,24 @@ class Content(Mapping):
 
     @property
     def type(self):
-        key = "type"
-        return self.data[key] if key in self.data else None
+        return self.data["type"] if "type" in self.data else None
+
+    @type.setter
+    def type(self, type):
+        self.data["type"] = type
+
+    def __getitem__(self, key):
+        return self.data[key]
+
+    def __iter__(self):
+        self.data.__iter__()
+
+    def __len__(self):
+        return len(self.data)
+
+    def __repr__(self):
+        data = {}
+        for key, value in self.data.items():
+            if key != "content":
+                data[key] = value
+        return str(data)
