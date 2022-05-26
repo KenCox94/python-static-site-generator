@@ -12,5 +12,5 @@ class Parser:
         raise NotImplementedError
 
     def read(self, path: Path):
-        with open(path) as file:
+        with open(path, 'r') as file:
             return file.read()
