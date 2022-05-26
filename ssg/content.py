@@ -20,3 +20,10 @@ class Content(Mapping):
     @property
     def body(self):
         return self.data["content"]
+
+    @property
+    def type(self):
+        key = "type"
+        if key in self.data:
+            return self.data[key]
+        return None
