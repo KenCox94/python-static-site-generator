@@ -24,6 +24,4 @@ class Content(Mapping):
     @property
     def type(self):
         key = "type"
-        if key in self.data:
-            return self.data[key]
-        return None
+        return self.data[key] if key in self.data else None
