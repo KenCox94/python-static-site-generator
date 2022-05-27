@@ -43,5 +43,5 @@ class MarkdownParser(Parser):
         content = Content.load(self.read(path))
         html = markdown(content.body)
         self.write(path, dest, html)
-        msg = "\x1b[1;32m{} converted to HTML. Metadata: {}\n".format(path.name, content)
+        msg = "\x1b[1;32m{} converted to HTML. Metadata: {}\n".format(content, path.name)
         sys.stdout.write(msg)
